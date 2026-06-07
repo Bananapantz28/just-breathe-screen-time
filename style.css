@@ -1,0 +1,38 @@
+body {
+    font-family: Nunito;
+}
+h1 {
+    font-weight: 400;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 8%;
+}
+div.continue {
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%); /* Shift left by half the button's width to perfectly center it */
+}
+div.continue > button {
+    border: 0px;
+    background-color: rgb(0, 136, 255);
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.589) 0px 2px 5px 0px; /*Color, x-position, y-position, blur, spread*/
+    transition: padding box-shadow;
+    transition-duration: 0.1s;
+}
+div.continue > button:active{
+    background-color: rgb(0, 117, 219);
+    color: rgb(228, 228, 228);
+    padding: 19px;
+    box-shadow: rgba(0, 0, 0, 0.589) 0px 0px 0px 0px; /*Color, x-position, y-position, blur, spread*/
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(fonts/Nunito.ttf);
+}
