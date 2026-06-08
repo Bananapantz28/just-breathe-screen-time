@@ -1,39 +1,68 @@
-body {
-    font-family: Nunito;
-}
-h1 {
-    font-weight: 700;
-    text-align: center;
-    font-size: 24px;
-    padding-top: 6%;
-}
-div.continue {
-    margin: auto;
-    text-align: center;
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%); /* Shift left by half the button's width to perfectly center it */
-}
-div.continue > button {
-    border: 0px;
-    background-color: rgb(0, 136, 255);
-    color: white;
-    font-size: 16px;
-    padding: 20px;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.589) 0px 2px 5px 0px; /*Color, x-position, y-position, blur, spread*/
-    transition: padding box-shadow;
-    transition-duration: 0.1s;
-}
-div.continue > button:active{
-    background-color: rgb(0, 117, 219);
-    color: rgb(228, 228, 228);
-    padding: 19px;
-    box-shadow: rgba(0, 0, 0, 0.589) 0px 0px 0px 0px; /*Color, x-position, y-position, blur, spread*/
+:root {
+    color-scheme: light dark;
+
+    --bg-color: light-dark(#ffffff, #121212);
+    --text-color: light-dark(#333333, #ffffff);
+    --accent-color: light-dark(#0066cc, #4da6ff);
 }
 
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: SF-Pro;
+    margin: 0px;
+}
+a {
+    color: var(--accent-color);
+}
+div.title {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+}
+div.title > img {
+    width: 100px;
+    height: 100px;
+}
+h1 {
+    font-weight: 600;
+    font-size: 24px;
+}
+div.continue {
+    /* margin: auto; */
+    text-align: center;
+    position: fixed;
+    bottom: 3%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation-name: continueButton;
+    animation-duration: 2s;
+    animation-delay: 9s;
+    animation: continueButton 1.7s ease-in-out 8s 1 normal forwards;
+    pointer-events: none;
+}
+div.continue a {
+    color: white;
+    background-color: rgb(0, 110, 255);
+    padding: 20px 110px 20px 110px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+div.continue > a:active{
+    background-color: rgb(109, 187, 255);
+}
+/*Animations*/
+@keyframes continueButton {
+    from {display: 0; pointer-events: none;}
+    to {opacity: 1; pointer-events: auto;}
+}
+
+/*Fonts*/
 @font-face {
-    font-family: Nunito;
-    src: url(fonts/Nunito.ttf);
+    font-family: SF-Pro;
+    src: url(fonts/SF-Pro.ttf);
 }
