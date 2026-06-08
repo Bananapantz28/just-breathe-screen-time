@@ -3,7 +3,7 @@
 
     --bg-color: light-dark(#ffffff, #121212);
     --text-color: light-dark(#333333, #ffffff);
-    --accent-color: light-dark(#0066cc, #4da6ff);
+    --accent-color: light-dark(rgb(35, 36, 37), #e7f3ff);
 }
 
 body {
@@ -14,6 +14,7 @@ body {
 }
 a {
     color: var(--accent-color);
+    text-decoration: none;
 }
 div.title {
     justify-content: center;
@@ -29,6 +30,21 @@ h1 {
     font-weight: 600;
     font-size: 24px;
 }
+h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+div.breath-counter {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    height: 300px;
+    border-radius: 25px;
+}
+
 div.continue {
     /* margin: auto; */
     text-align: center;
@@ -46,18 +62,48 @@ div.continue {
     pointer-events: none;
 }
 div.continue a {
-    color: white;
     background-color: rgb(0, 110, 255);
     padding: 20px 110px 20px 110px;
-    text-decoration: none;
     border-radius: 25px;
 }
 div.continue > a:active{
     background-color: rgb(109, 187, 255);
 }
+
+div.suggested-section {
+    animation: suggestedApp 1.7s ease-in-out 4s 1 normal forwards;
+    opacity: 0;
+}
+div.suggested-app {
+    background-color: #333333;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px;
+    width: 85%;
+    margin: auto;
+    border-radius: 15px;
+}
+div.suggested-app div{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+}
+div.suggested-app img {
+    width: 64px;
+    border-radius: 12px;
+    margin: 0px 15px 0px 0px;
+    display: block;
+}
+
 /*Animations*/
 @keyframes continueButton {
-    from {display: 0; pointer-events: none;}
+    from {opacity: 0; pointer-events: none;}
+    to {opacity: 1; pointer-events: auto;}
+}
+@keyframes suggestedApp {
+    from {opacity: 0; pointer-events: none;}
     to {opacity: 1; pointer-events: auto;}
 }
 
